@@ -1,0 +1,31 @@
+﻿id,kategorie,frage,antwortoptionen,korrekte_antwort,schwierigkeitsgrad,tag,erklaerung
+,Mathe,Was ist 77 + 33?,"[""99"","" 110"","" 120"","" 100""]",110,1,Grundrechenarten,Einfache Addition zweier zweistelliger Zahlen
+,Geografie,Wie heißt die Hauptstadt von Deutschland?,"[""Berlin"","" Hamburg"","" München"","" Frankfurt""]",Berlin,1,Europa,-
+,Geografie,Welcher Fluss fließt durch Wien?,"[""Donau"","" Rhein"","" Elbe"","" Main""]",Donau,2,Europa,-
+,Geografie,Welches Land grenzt nicht an Spanien?,"[""Frankreich"","" Portugal"","" Andorra"","" Italien""]",Italien,3,Europa,-
+,Name Recall (Historische),Wer war der erste Bundeskanzler der Bundesrepublik Deutschland?,"[""Konrad Adenauer"","" Helmut Kohl"","" Willy Brandt"","" Angela Merkel""]",Konrad Adenauer,1,Zeitgeschichte,-
+,Name Recall (Historische),"Wer komponierte die 9. Sinfonie, auch „Ode an die Freude“ genannt?","[""Ludwig van Beethoven"","" Wolfgang Amadeus Mozart"","" Johann S. Bach"","" Franz Schubert""]",Ludwig van Beethoven,2,Klassische Musik,-
+,Name Recall (Historische),Wer entdeckte 1492 im Auftrag der spanischen Krone Amerika?,"[""Christoph Kolumbus"","" Ferdinand Magellan"","" Vasco da Gama"","" Amerigo Vespucci""]",Christoph Kolumbus,3,Entdecker,-
+,Logikrätsel,"Welche Zahl folgt in der Reihe: 2, 4, 6, 8, ...?","[""9"","" 10"","" 11"","" 12""]",10,1,Zahlenfolgen,-
+,Daily Trivia,Welche Farbe hat die spanische Flagge neben Gelb?,"[""Rot"","" Blau"","" Grün"","" Weiß""]",Rot,1,Europa,-
+,Daily Trivia,In welcher Stadt steht das berühmte Guggenheim-Museum in Spanien?,"[""Bilbao"","" Madrid"","" Barcelona"","" Sevilla""]",Bilbao,2,Kultur,-
+,Daily Trivia,Wer schrieb den Roman „Der Name der Rose“?,"[""Umberto Eco"","" Gabriel García Márquez"","" Miguel de Cervantes"","" Thomas Mann""]",Umberto Eco,3,Literatur,-
+,Geografie,Welches ist das flächenmäßig größte Land der Welt?,"[""Russland"","" Kanada"","" China"","" USA""]",Russland,1,Länder,Russland ist flächenmäßig das größte Land
+,Geografie,Welcher Kontinent beherbergt die meisten Länder?,"[""Afrika"","" Asien"","" Europa"","" Südamerika""]",Afrika,2,Kontinente,Afrika umfasst über 50 Länder
+,Name Recall (Historische),Wer war der erste Präsident der Vereinigten Staaten?,"[""George Washington"","" Thomas Jefferson"","" Abraham Lincoln"","" John Adams""]",George Washington,1,Geschichte,Erster US-Präsident
+,Name Recall (Historische),Wer entwarf die Freiheitsstatue?,"[""Frédéric Auguste Bartholdi"","" Gustave Eiffel"","" Michelangelo"","" Leonardo da Vinci""]",Frédéric Auguste Bartholdi,2,Kunst,Schöpfer der Freiheitsstatue
+,Name Recall (Historische),Welcher König führte die Normannische Eroberung Englands an?,"[""Wilhelm der Eroberer"","" Heinrich II"","" Richard Löwenherz"","" Eduard der Bekenner""]",Wilhelm der Eroberer,3,Mittelalter,1066: Normannische Eroberung
+,Daily Trivia,In welchem Jahr endete der Zweite Weltkrieg?,"[""1945"","" 1944"","" 1939"","" 1950""]",1945,1,Geschichte,Zweiter Weltkrieg endete 1945
+,Daily Trivia,Wer malte die Mona Lisa?,"[""Leonardo da Vinci"","" Pablo Picasso"","" Vincent van Gogh"","" Rembrandt""]",Leonardo da Vinci,2,Kunst,Meisterwerk der Renaissance
+,Geschichte,In welchem Jahr fiel die Berliner Mauer?,"[""1989"","" 1991"","" 1987"","" 1990""]",1989,2,Zeitgeschichte,Mauerfall markierte das Ende des Kalten Krieges
+,Mathe,Wie viel sind 25% von 80?,"[""20"","" 25"","" 30"","" 15""]",20,1,Prozentrechnung,-
+,Geografie,Welcher Berg ist der höchste in Deutschland?,"[""Zugspitze"","" Brocken"","" Feldberg"","" Watzmann""]",Zugspitze,2,Gebirge,2.962 m
+,Geografie,Welches Land liegt zwischen Frankreich und Spanien?,"[""Schweiz"","" Italien"","" Andorra"","" Belgien""]",Andorra,3,Europa,-
+,Name Recall (Historische),"Wer schrieb ""Die unendliche Geschichte""?","[""Michael Ende"","" Erich Kästner"","" Cornelia Funke"","" James Krüss""]",Michael Ende,2,Literatur,-
+,Name Recall (Historische),Wie hieß der erste deutsche Bundespräsident?,"[""Theodor Heuss"","" Walter Scheel"","" Richard von Weizsäcker"","" Gustav Heinemann""]",Theodor Heuss,3,Politik,-
+,Logikrätsel,"Was hat Städte, aber keine Häuser, Wälder aber keine Bäume und Straßen, aber keine Autos?","[""Landkarte"","" Wald"","" Himmel"","" Meer""]",Landkarte,1,Wortspiel,-
+,Daily Trivia,Welches Tier symbolisiert Glück in Deutschland?,"[""Marienkäfer"","" Hase"","" Fuchs"","" Eichhörnchen""]",Marienkäfer,1,Kultur,-
+,Daily Trivia,Welches Gemüse ist typisch für den Herbst?,"[""Kürbis"","" Gurke"","" Tomate"","" Paprika""]",Kürbis,1,Jahreszeiten,-
+,Daily Trivia,Wie viele Bundesländer hat Deutschland?,"[""12"","" 14"","" 16"","" 18""]",16,2,Politik,-
+,Sprichwörter,"""Wer rastet, ...""","[""der rostet"","" der verliert"","" der schläft"","" der gewinnt""]",der rostet,1,Sprichwörter,-
+,Geografie,Welcher Fluss fließt durch Köln?,"[""Rhein"","" Donau"","" Elbe"","" Main""]",Rhein,2,Deutschland,-

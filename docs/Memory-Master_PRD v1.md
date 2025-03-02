@@ -228,33 +228,54 @@ A simplified schema with essential tables:
 
 Assuming a **Next.js** project (adapt similarly for Create React App). The structure may look like this:
 
-```php
-root/
- ├─ pages/
- │   ├─ index.tsx               # Homepage or login redirect
- │   ├─ login.tsx               # Login/registration page
- │   ├─ mood-selection.tsx      # Page for mood selection
- │   ├─ category-selection.tsx  # Page for picking quiz categories
- │   ├─ quiz.tsx                # Main quiz flow
- │   ├─ memory-prompt.tsx       # Morning prompt input
- │   ├─ evening-recall.tsx      # Evening recall input
- │   ├─ report.tsx              # Daily report
- │   └─ api/                    # API routes if needed for server-side logic
- ├─ components/
- │   ├─ Layout.tsx              # Common layout with header/footer
- │   ├─ QuizItem.tsx            # Renders an individual question
- │   ├─ TTSButton.tsx           # Button that triggers text-to-speech
- │   └─ VoiceInput.tsx          # Component for speech-to-text input
- ├─ lib/
- │   ├─ supabaseClient.ts       # Supabase initialization
- │   └─ apiHelpers.ts           # Fetch or DB helper functions
+MEMORY-MASTER/
+ ├─ docs/
+ │   └─ Memory-Master_PRD v1.md    # Your documentation / project requirements
  ├─ public/
- │   └─ images/                 # Icons, logos, memory-game images if any
- ├─ styles/
- │   └─ globals.css             # Global CSS, high-contrast styles
- ├─ .env.local                  # Supabase credentials, environment variables
- ├─ package.json
- └─ README.md
+ │   ├─ file.svg
+ │   ├─ globe.svg
+ │   ├─ next.svg
+ │   ├─ vercel.svg
+ │   ├─ window.svg
+ │   └─ # (Add any images for Memory Game or custom icons here)
+ └─ src/
+     ├─ app/
+     │   ├─ (routes)
+     │   │   ├─ login/
+     │   │   │   └─ page.tsx      # Login form page
+     │   │   ├─ mood-selection/
+     │   │   │   └─ page.tsx      # Mood selection flow
+     │   │   ├─ category-selection/
+     │   │   │   └─ page.tsx      # Choose categories
+     │   │   ├─ quiz/
+     │   │   │   └─ page.tsx      # Main quiz interface
+     │   │   ├─ memory-prompt/
+     │   │   │   └─ page.tsx      # Morning memory prompt
+     │   │   ├─ evening-recall/
+     │   │   │   └─ page.tsx      # Evening recall prompt
+     │   │   └─ report/
+     │   │       └─ page.tsx      # Daily report page
+     │   ├─ layout.tsx
+     │   ├─ page.tsx              # Landing/home page
+     │   ├─ globals.css           # Global styles
+     │   └─ favicon.ico
+     ├─ components/
+     │   ├─ QuizItem.tsx          # Renders an individual quiz question
+     │   ├─ TTSButton.tsx         # (Optional) For text-to-speech
+     │   ├─ VoiceInput.tsx        # (Optional) For speech-to-text
+     │   └─ # (Add any shared UI components here)
+     ├─ lib/
+     │   └─ supabaseClient.ts     # Supabase initialization
+     ├─ utils/
+     │   └─ apiHelpers.ts         # Helper functions for DB queries or fetches
+     ├─ .gitignore
+     ├─ eslint.config.mjs
+     ├─ next-env.d.ts
+     ├─ next.config.ts
+     ├─ package.json
+     ├─ postcss.config.mjs
+     ├─ README.md
+     └─ tsconfig.json
 ```
 
 **Key Points**:

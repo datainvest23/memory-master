@@ -1,0 +1,88 @@
+﻿id,kategorie,frage,antwortoptionen,korrekte_antwort,schwierigkeitsgrad,tag,erklaerung
+70,Mathe,Was ist 12 * 8?,"[""96"", ""88"", ""108"", ""120""]",96,1,Grundrechenarten,Einfache Multiplikation
+71,Mathe,Was ist 2 hoch 5?,"[""10"", ""32"", ""64"", ""25""]",32,2,Potenzen,Kleine Potenzrechnung
+72,Mathe,Was ist ein Viertel von 100?,"[""20"", ""25"", ""30"", ""10""]",25,1,Bruchrechnung,Einfache Bruchaufgabe
+73,Mathe,Wieviel ist 500 minus 123?,"[""377"", ""387"", ""400"", ""423""]",377,2,Grundrechenarten,Einfache Subtraktion
+74,Mathe,Welche der folgenden Zahlen ist keine Primzahl?,"[""2"", ""3"", ""9"", ""7""]",9,3,Zahlentheorie,9 ist durch 3 teilbar
+75,Geografie,Welches Meer grenzt an Saudi-Arabien im Osten?,"[""Rotes Meer"", ""Persischer Golf"", ""Mittelmeer"", ""Arabisches Meer""]",Persischer Golf,2,Asien,Saudi-Arabien hat Küsten am Roten Meer und am Persischen Golf
+76,Geografie,Wie heiss die Hauptstadt von Brasilien?,"[""BrasÃ­lia"", ""Rio de Janeiro"", ""SÃ£o Paulo"", ""Salvador""]",BrasÃ­lia,2,Südamerika,Hauptstadt seit 1960
+77,Geografie,Welcher Kontinent ist der kleinste der Erde?,"[""Australien"", ""Antarktika"", ""Europa"", ""Südamerika""]",Australien,1,Kontinente,Australien gilt als kleinster Kontinent
+78,Geografie,Durch welches Land fliess grössenteils der Fluss Ganges?,"[""Pakistan"", ""Indien"", ""China"", ""Nepal""]",Indien,3,Asien,Durchquert hauptsächlich den Norden Indiens
+79,Geografie,Welche Insel gilt als grösse Insel der Welt die einem Land zugeordnet ist?,"[""Grönland"", ""Borneo"", ""Madagaskar"", ""Neuguinea""]",Grönland,3,Inseln,Grönland gehört zu Dänemark
+80,Geschichte,In welchem Jahr endete der Dreissigjährige Krieg?,"[""1618"", ""1648"", ""1650"", ""1700""]",1648,3,FrüheNeuzeit,Westfälischer Friede beendete den Krieg
+81,Geschichte,Wer war der erste Kaiser des Römischen Reiches?,"[""Julius Caesar"", ""Augustus"", ""Tiberius"", ""Nero""]",Augustus,3,Antike,Augustus regierte von 27 v. Chr. bis 14 n. Chr.
+82,Geschichte,Welches Ereignis fand 1789 in Frankreich statt?,"[""Amerikanische Unabhängigkeit"", ""Französische Revolution"", ""Napoleonische Kriege"", ""Sturm auf Moskau""]",Französische Revolution,2,Neuzeit,Die Revolution begann mit dem Sturm auf die Bastille
+83,Geschichte,Wer war Pharao während des Baus der Grossen Pyramide von Gizeh?,"[""Cheops"", ""Tutanchamun"", ""Ramses II"", ""Echnaton""]",Cheops,3,Antike,Die Cheops-Pyramide ist die älteste und grösse der drei Pyramiden von Gizeh
+84,Geschichte,Welche chinesische Dynastie baute die Verbotene Stadt?,"[""Ming-Dynastie"", ""Qing-Dynastie"", ""Han-Dynastie"", ""Tang-Dynastie""]",Ming-Dynastie,3,Asien,Der Bau begann im frühen 15. Jahrhundert
+85,Name Recall (Historische),Wer entdeckte den Seeweg nach Indien um Afrika herum?,"[""Ferdinand Magellan"", ""Christoph Kolumbus"", ""Vasco da Gama"", ""James Cook""]",Vasco da Gama,3,Entdecker,1498 erreichte er Kalikut in Indien
+86,Name Recall (Historische),Wer war die erste Frau im All?,"[""Sally Ride"", ""Valentina Tereschkowa"", ""Juri Gagarin"", ""Mae Jemison""]",Valentina Tereschkowa,2,Raumfahrt,Sie flog 1963 an Bord von Wostok 6
+87,Name Recall (Historische),Wer schrieb 'Krieg und Frieden'?,"[""Lew Tolstoi"", ""Fyodor Dostojewski"", ""Anton Tschechow"", ""Iwan Turgenew""]",Lew Tolstoi,2,Literatur,Klassischer russischer Roman aus dem 19. Jahrhundert
+88,Mathe,Was ist 23 + 17?,"[""35"", ""30"", ""40"", ""33""]",40,1,Grundrechenarten,Einfache Addition
+89,Mathe,Was ist das Doppelte von 14?,"[""7"", ""28"", ""44"", ""30""]",28,1,Grundrechenarten,Doppelter Wert
+90,Mathe,Was ist 90 - 55?,"[""35"", ""40"", ""45"", ""55""]",35,1,Grundrechenarten,Einfache Subtraktion
+91,Mathe,Was ergibt 6 * 6?,"[""12"", ""24"", ""30"", ""36""]",36,1,Multiplikation,Quadratzahl
+92,Mathe,Wie viel ist ein Viertel von 20?,"[""5"", ""4"", ""2"", ""10""]",5,1,Bruchrechnung,Einfache Bruchaufgabe
+93,Mathe,Was ist 12 + 8 - 3?,"[""17"", ""16"", ""15"", ""18""]",17,2,Grundrechenarten,Kombination aus Addition und Subtraktion
+94,Mathe,Wieviele Minuten sind eine halbe Stunde?,"[""15"", ""20"", ""30"", ""25""]",30,1,Zeiteinheiten,Halbe Stunde = 30 Minuten
+95,Mathe,Was ist 10% von 200?,"[""2"", ""10"", ""20"", ""25""]",20,2,Prozentrechnung,Einfache Prozente
+96,Mathe,Was ist 9 * 5?,"[""35"", ""40"", ""45"", ""50""]",45,1,Multiplikation,Kleine 1x1-Aufgabe
+97,Mathe,Was ergibt 48 / 6?,"[""4"", ""6"", ""8"", ""9""]",8,1,Division,Basis-1x1-Aufgabe
+98,Geografie,Welche Stadt ist die Hauptstadt von Italien?,"[""Mailand"", ""Neapel"", ""Rom"", ""Florenz""]",Rom,1,Europa,Bekannt für das Kolosseum
+99,Geografie,An welches Meer grenzt Griechenland überwiegend?,"[""Kaspisches Meer"", ""Mittelmeer"", ""Schwarzes Meer"", ""Rotes Meer""]",Mittelmeer,2,Europa,Griechenland hat viele Inseln
+100,Geografie,Welcher Kontinent wird manchmal als 'Dunkler Kontinent' bezeichnet?,"[""Asien"", ""Afrika"", ""Europa"", ""Australien""]",Afrika,3,Kontinente,Historische Bezeichnung
+101,Geografie,Welches Land liegt nördlich von Deutschland?,"[""Polen"", ""Dänemark"", ""Schweiz"", ""Frankreich""]",Dänemark,1,Europa,Direkter Nachbar
+102,Geografie,Welcher Fluss fliess durch London?,"[""Donau"", ""Seine"", ""Themse"", ""Rhein""]",Themse,1,Europa,Prägt das Stadtbild Londons
+103,Name Recall (Historische),Wer war der erste US-Präsident?,"[""George Washington"", ""Abraham Lincoln"", ""Thomas Jefferson"", ""John Adams""]",George Washington,1,Politik,Amtszeit 1789-1797
+104,Name Recall (Historische),Wer erfand das Telefon?,"[""Johannes Gutenberg"", ""Alexander Graham Bell"", ""Thomas Edison"", ""Guglielmo Marconi""]",Alexander Graham Bell,2,Erfindungen,1876 patentiert
+105,Name Recall (Historische),Wer schrieb das Werk 'Die Leiden des jungen Werther'?,"[""Johann Wolfgang von Goethe"", ""Friedrich Schiller"", ""Heinrich Heine"", ""Gotthold Lessing""]",Johann Wolfgang von Goethe,2,Literatur,Erschienen 1774
+106,Name Recall (Historische),Wer entdeckte die Penicillin-Wirkung?,"[""Marie Curie"", ""Louis Pasteur"", ""Alexander Fleming"", ""Robert Koch""]",Alexander Fleming,3,Medizin,1928 Zufallsentdeckung
+107,Name Recall (Historische),Wer war Kaiser von Frankreich und wurde 1815 in Waterloo besiegt?,"[""Karl V"", ""Wilhelm II"", ""Napoleon Bonaparte"", ""Ludwig XIV""]",Napoleon Bonaparte,2,FranzösischeRevolution,Ende seiner Herrschaft
+108,Logikrätsel,Was wird nasser je mehr es trocknet?,"[""Ein Fisch"", ""Ein Handtuch"", ""Ein Schwamm"", ""Ein Waschlappen""]",Ein Handtuch,1,Rätsel,Paradoxe Frage
+109,Logikrätsel,Was kann man brechen ohne es in den Händen zu halten?,"[""Einen Bleistift"", ""Eine Vase"", ""Ein Versprechen"", ""Ein Brett""]",Ein Versprechen,2,Wortspiel,Brechen ohne physische Berührung
+110,Logikrätsel,Welcher Monat hat 28 Tage?,"[""Februar"", ""Januar"", ""Alle Monate"", ""Juli""]",Alle Monate,1,Rätsel,Logische Fangfrage
+111,Logikrätsel,Welches Wort enthält alle fünf Vokale nacheinander Beispiel Sequoia?,"[""Automobil"", ""Emanzipation"", ""Zweifellos"", ""Sequoia""]",Sequoia,3,Wortspiel,Seltener Wortschatz
+112,Daily Trivia,Welches Getränk ist bekannt als Heissgetränk aus gerösteten Bohnen?,"[""Tee"", ""Kakao"", ""Kaffee"", ""Saft""]",Kaffee,1,Essen&Trinken,Täglich populär
+113,Daily Trivia,Zu welcher Jahreszeit blühen die meisten Kirschbäume in Mitteleuropa?,"[""Sommer"", ""Frühling"", ""Herbst"", ""Winter""]",Frühling,1,Jahreszeiten,Blütezeit meist im April
+114,Daily Trivia,Welches Tier sagt man bringt zu Silvester Glück in Deutschland?,"[""Schwein"", ""Katze"", ""Hund"", ""Pferd""]",Schwein,1,Kultur,Glücksschwein
+115,Daily Trivia,Wie viele Tage hat der Monat April in einem normalen Jahr?,"[""30"", ""31"", ""28"", ""29""]",30,1,Kalender,Standardmonatslänge
+116,Daily Trivia,Was ist typisch für ein Kreuzworträtsel?,"[""Rechenaufgaben"", ""Multiple-Choice-Fragen"", ""Wortgitter mit Hinweisen"", ""Bilderrätsel""]",Wortgitter mit Hinweisen,2,Rätsel,Populäres Gedächtnistraining
+117,Geschichte,In welchem Jahr begann der Erste Weltkrieg?,"[""1914"", ""1918"", ""1939"", ""1900""]",1914,2,Weltkriege,Kriegsausbruch durch Attentat in Sarajevo
+118,Geschichte,Wann wurde die Berliner Mauer gebaut?,"[""1945"", ""1961"", ""1989"", ""1990""]",1961,2,DeutscheGeschichte,Trennte Ost und West
+119,Geschichte,Wer war im 16 Jahrhundert König von England und begründete die anglikanische Kirche?,"[""Heinrich VIII"", ""Edward VI"", ""Georg III"", ""Karl I""]",Heinrich VIII,3,Reformation,Bekannt für seine vielen Ehen
+120,Geschichte,In welchem Jahr endete der Westfälische Friede den Dreissigjährigen Krieg?,"[""1618"", ""1648"", ""1701"", ""1492""]",1648,3,Europa,Beendete einen verheerenden Religionskrieg
+121,Geschichte,Wer war die eiserne Lady in der britischen Politik?,"[""Elizabeth II"", ""Theresa May"", ""Margaret Thatcher"", ""Angela Merkel""]",Margaret Thatcher,2,Politik,Britische Premierministerin von 1979 bis 1990
+122,Sprichwörter,Ergänze Viele Köche verderben...?,"[""den Herd"", ""den Hunger"", ""den Brei"", ""die Lust""]",den Brei,1,Redewendungen,Zu viele Entscheidungsträger
+123,Sprichwörter,Wie endet Der Apfel fällt nicht weit...?,"[""vom Tisch"", ""vom Apfelbaum"", ""vom Baum"", ""vom Stamm""]",vom Stamm,1,Redewendungen,Bedeutet Ã„hnlichkeit in Familien
+124,Sprichwörter,Ergänze Morgenstund hat...?,"[""keine Lust"", ""weissen Rauch"", ""viel Arbeit"", ""Gold im Mund""]",Gold im Mund,1,Redewendungen,Steht für Produktivität früh am Tag
+125,Sprichwörter,Wie heiss das Sprichwort Wer hoch steigt der...?,"[""sieht mehr"", ""geniess den Ausblick"", ""fällt tief"", ""geht weiter""]",fällt tief,2,Redewendungen,Warnung vor Ãœbermut
+126,Sprichwörter,Ergänze Der frühe Vogel fängt...?,"[""den Wurm"", ""an zu singen"", ""den Tag an"", ""das Korn""]",den Wurm,1,Redewendungen,Aufforderung früh anzufangen
+127,Mathe,Was ist 150 geteilt durch 5?,"[""30"", ""25"", ""35"", ""40""]",30,1,Grundrechenarten,Einfache Division
+128,Geografie,Welcher Fluss fliesst durch Paris?,"[""Seine"", ""Rhein"", ""Donau"", ""Themse""]",Seine,2,Europa,Die Seine ist der Hauptfluss von Paris
+129,Name Recall (Historische),Wer schrieb 'Faust'?,"[""Goethe"", ""Schiller"", ""Kafka"", ""Brecht""]",Goethe,2,Literatur,Johann Wolfgang von Goethe verfasste das Werk
+130,Logikrätsel,"Welche Zahl folgt in der Reihe: 3, 6, 9, 12, ...?","[""15"", ""14"", ""13"", ""16""]",15,1,Zahlenfolgen,Arithmetische Folge mit Schrittweite 3
+131,Daily Trivia,Welches Tier ist das Symbol der USA?,"[""Adler"", ""Bär"", ""Löwe"", ""Wolf""]",Adler,1,Kultur,Der Weisskopfseeadler ist das Nationaltier
+132,Geschichte,In welchem Jahr wurde die EU gegrÃ¼ndet?,"[""1993"", ""1957"", ""2002"", ""1989""]",1993,2,Politik,Vertrag von Maastricht
+133,Sprichwörter,Was reimt sich auf 'Eile mit Weile'?,"[""Gut Ding will Weile haben"", ""Morgenstund hat Gold im Mund"", ""Ende gut, alles gut"", ""Ãœbung macht den Meister""]",Gut Ding will Weile haben,1,Sprichwörter,-
+134,Geografie,Welcher Berg ist der höchste in den Alpen?,"[""Mont Blanc"", ""Matterhorn"", ""Zugspitze"", ""Eiger""]",Mont Blanc,2,Gebirge,Mont Blanc ist mit 4.809 m der höchste Berg der Alpen
+135,Name Recall (Historische),Wer malte 'Die Sternennacht'?,"[""Vincent van Gogh"", ""Pablo Picasso"", ""Claude Monet"", ""Salvador DalÃ­""]",Vincent van Gogh,2,Kunst,BerÃ¼hmtes Werk aus dem Jahr 1889
+136,Logikrätsel,Was ist die Hälfte von 50%?,"[""25%"", ""50%"", ""75%"", ""10%""]",25%,2,Prozentrechnung,50% geteilt durch 2
+137,Daily Trivia,Welches Land ist fÃ¼r das 'Land der aufgehenden Sonne' bekannt?,"[""Japan"", ""China"", ""Thailand"", ""SÃ¼dkorea""]",Japan,1,Kultur,Beiname Japans
+138,Mathe,Wie viel ist 12 x 12?,"[""144"", ""120"", ""132"", ""100""]",144,1,Grundrechenarten,Quadratzahl von 12
+139,Geografie,Welches Land hat die Form eines Stiefels?,"[""Italien"", ""Griechenland"", ""Spanien"", ""Frankreich""]",Italien,1,Europa,-
+140,Name Recall (Historische),Wer erfand den Buchdruck?,"[""Johannes Gutenberg"", ""Albert Einstein"", ""Thomas Edison"", ""Nikola Tesla""]",Johannes Gutenberg,1,Technik,Erfindung im 15. Jahrhundert
+141,Daily Trivia,Welche Frucht ist auf der Packung von Chiquita abgebildet?,"[""Banane"", ""Ananas"", ""Orange"", ""Apfel""]",Banane,1,Allgemeinwissen,-
+142,Logikrätsel,"Was kommt in der Reihe: A, C, E, G, ...?","[""I"", ""H"", ""J"", ""K""]",I,1,Alphabetfolgen,Jeder zweite Buchstabe
+143,Geschichte,Wer war der erste Mensch im Weltall?,"[""Juri Gagarin"", ""Neil Armstrong"", ""Buzz Aldrin"", ""John Glenn""]",Juri Gagarin,2,Zeitgeschichte,1961
+144,Geografie,Welches Land wird als 'Land der tausend Seen' bezeichnet?,"[""Finnland"", ""Norwegen"", ""Kanada"", ""Schweden""]",Finnland,2,Natur,Ãœber 180.000 Seen
+145,Sprichwörter,"Wer im Glashaus sitzt, ...?","[""soll nicht mit Steinen werfen"", ""soll Licht anmachen"", ""braucht Vorhänge"", ""hat schöne Aussicht""]",soll nicht mit Steinen werfen,1,Sprichwörter,-
+146,Name Recall (Historische),Wer komponierte 'Die Zauberflöte'?,"[""Wolfgang Amadeus Mozart"", ""Ludwig van Beethoven"", ""Johann S. Bach"", ""Franz Schubert""]",Wolfgang Amadeus Mozart,2,Klassische Musik,-
+147,Daily Trivia,Welche Farbe hat ein Regenbogen ganz aussen?,"[""Rot"", ""Blau"", ""GrÃ¼n"", ""Violett""]",Rot,1,Naturwissenschaft,-
+148,Geografie,Welcher Ozean ist der grösste?,"[""Pazifik"", ""Atlantik"", ""Indik"", ""Arktis""]",Pazifik,1,Geographie,-
+149,Logikrätsel,"Was fehlt: Montag, Mittwoch, Freitag, ...?","[""Sonntag"", ""Samstag"", ""Dienstag"", ""Donnerstag""]",Sonntag,2,Zeitreihen,Jeden zweiten Tag
+150,Name Recall (Historische),Wer schrieb '1984'?,"[""George Orwell"", ""Ernest Hemingway"", ""F. Scott Fitzgerald"", ""J.K. Rowling""]",George Orwell,3,Literatur,Dystopischer Roman
+151,Geschichte,Wann begann der Erste Weltkrieg?,"[""1914"", ""1918"", ""1905"", ""1939""]",1914,2,Geschichte,-
+152,Daily Trivia,Welches Element hat das chemische Symbol 'O'?,"[""Sauerstoff"", ""Gold"", ""Eisen"", ""Kohlenstoff""]",Sauerstoff,1,Chemie,-
+153,Sprichwörter,Aller Anfang ...?,"[""ist schwer"", ""ist leicht"", ""macht Spass"", ""ist teuer""]",ist schwer,1,Sprichwörter,-
+154,Geografie,Welche Hauptstadt heisst auch 'Ewige Stadt'?,"[""Rom"", ""Athen"", ""Paris"", ""Kairo""]",Rom,1,Europa,-
+155,Mathe,Wie viel Grad hat ein rechter Winkel?,"[""90"", ""180"", ""45"", ""360""]",90,1,Geometrie,-
+156,Name Recall (Historische),Wer entdeckte die Schwerkraft (Apfel-Theorie)?,"[""Isaac Newton"", ""Albert Einstein"", ""Galileo Galilei"", ""Nikola Tesla""]",Isaac Newton,2,Physik,-
