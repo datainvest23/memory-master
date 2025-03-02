@@ -21,37 +21,51 @@ export default function MoodSelectionPage() {
   ];
 
   useEffect(() => {
-    // 1) Get the current user session from Supabase Auth
+    // First check localStorage for the name
+    const storedName = localStorage.getItem('userFirstName');
+    if (storedName) {
+      setFirstName(storedName);
+    }
+
+    // Still get the user ID and fetch profile if name not in localStorage
     supabase.auth.getUser().then(async ({ data, error }) => {
       if (data?.user) {
         const userId = data.user.id;
         setUserId(userId);
 
-        // 2) Fetch the user's profile data
-        const { data: profileData, error: profileError } = await supabase
-          .from("profiles")
-          .select("first_name")
-          .eq("user_id", userId)
-          .single();
+        // Only fetch profile if we don't have the name from localStorage
+        if (!storedName) {
+          console.log("Fetching profile for user:", userId);
+          
+          const { data: profileData, error: profileError } = await supabase
+            .from("profiles")
+            .select('first_name')
+            .eq("user_id", userId)
+            .maybeSingle();
 
-        if (!profileError && profileData) {
-          setFirstName(profileData.first_name);
+          if (profileError) {
+            console.error("Profile fetch error:", profileError);
+            console.log("Full error details:", JSON.stringify(profileError, null, 2));
+          } else if (profileData) {
+            console.log("Profile data fetched:", profileData);
+            setFirstName(profileData.first_name);
+            localStorage.setItem('userFirstName', profileData.first_name);
+          } else {
+            console.log("No profile found for user");
+          }
         }
       }
     });
   }, []);
 
   const handleSelectMood = async (mood: string) => {
-    // Store mood in localStorage for quiz
     localStorage.setItem("mood", mood);
-    // Redirect to next page
     window.location.href = "/category-selection";
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.moodCard}>
-        {/* 3) Personalized greeting if we have first_name */}
         <h1 className={styles.title}>
           {firstName ? `Hallo ${firstName}! Wie fühlst du dich heute?` : "Wie fühlst du dich heute?"}
         </h1>

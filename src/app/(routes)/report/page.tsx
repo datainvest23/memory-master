@@ -1,3 +1,4 @@
+// src/app/(routes)/report/page.tsx
 "use client";
 
 import { useEffect, useState } from "react";
@@ -7,37 +8,87 @@ export default function ReportPage() {
   const [activity, setActivity] = useState<any[]>([]);
   const [prompt, setPrompt] = useState<any>(null);
   const [userId, setUserId] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null); // Add error state
 
   useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => {
+    supabase.auth.getUser().then(({ data, error }) => {
+      if (error) {
+        console.error("Error getting user:", error);
+        setError("Error getting user session."); // Set error
+        return;
+      }
+
       if (data?.user) {
         setUserId(data.user.id);
+        console.log("ReportPage: User ID:", data.user.id); // Log the user ID
         fetchDailyReport(data.user.id);
+      } else {
+        console.log("ReportPage: No user session found.");
+        setError("User not logged in."); // Set error
       }
     });
   }, []);
 
-  const fetchDailyReport = async (uid: string) => {
-    // Example: fetch user_activity from "today"
-    // We'll do a naive approach: just fetch all, or you can filter by date
-    const { data: activityData } = await supabase
-      .from("user_activity")
-      .select("*")
-      .eq("user_id", uid)
-      .order("timestamp", { ascending: false })
-      .limit(10);
+    const fetchDailyReport = async (uid: string) => {
+        setError(null); // Clear previous errors.
+        try {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // Start of today
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1); // Start of tomorrow
 
-    // Also fetch the most recent memory prompt
-    const { data: promptData } = await supabase
-      .from("memory_prompts")
-      .select("*")
-      .eq("user_id", uid)
-      .order("id", { ascending: false })
-      .limit(1);
+            console.log("ReportPage: Fetching activity for user:", uid, "between", today.toISOString(), "and", tomorrow.toISOString());
 
-    setActivity(activityData || []);
-    setPrompt(promptData && promptData.length > 0 ? promptData[0] : null);
-  };
+            const { data: activityData, error: activityError } = await supabase
+                .from("user_activity")
+                .select("*")
+                .eq("user_id", uid)
+                .gte("timestamp", today.toISOString())
+                .lt("timestamp", tomorrow.toISOString())
+                .order("timestamp", { ascending: false });
+
+
+            if (activityError) {
+                console.error("ReportPage: Error fetching activity:", activityError);
+                throw activityError; // Re-throw to be caught by outer try/catch
+            }
+            console.log("ReportPage: Activity data:", activityData); // Log the fetched data
+            setActivity(activityData || []);
+
+
+            const { data: promptData, error: promptError } = await supabase
+                .from("memory_prompts")
+                .select("*")
+                .eq("user_id", uid)
+                .gte("created_at", today.toISOString())
+                .lt("created_at", tomorrow.toISOString())
+                .order("created_at", { ascending: false })  // Use created_at for ordering, id can be misleading if created out of order.
+                .maybeSingle(); // Use maybeSingle()
+
+            if (promptError) {
+                console.error("ReportPage: Error fetching prompt:", promptError);
+                throw promptError;  // Re-throw
+            }
+
+            console.log("ReportPage: Prompt data:", promptData); // Log the fetched data
+            setPrompt(promptData);
+
+        } catch (error) {
+             console.error("ReportPage: Error in fetchDailyReport:", error);
+            setError(error instanceof Error ? error.message : "An unexpected error occurred.");
+        }
+    };
+
+  if (error) {
+    return (
+      <main style={{ padding: 20 }}>
+        <h1>Tagesbericht</h1>
+        <p style={{ color: 'red' }}>Error: {error}</p>
+        <button onClick={() => (window.location.href = "/")}>Zur Startseite</button>
+      </main>
+    );
+  }
+
 
   return (
     <main style={{ padding: 20 }}>

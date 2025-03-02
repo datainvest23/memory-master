@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabaseClient";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import styles from "./quiz.module.css";
+import { useRouter } from "next/navigation";
 
 interface Question {
   id: number;
@@ -27,6 +28,8 @@ interface DebugInfo {
 }
 
 export default function QuizPage() {
+  const router = useRouter();
+  const supabase = createClientComponentClient();
   const [questions, setQuestions] = useState<Question[]>([]);
   const [current, setCurrent] = useState(0);
   const [score, setScore] = useState(0);
@@ -38,29 +41,42 @@ export default function QuizPage() {
   useEffect(() => {
     const initQuiz = async () => {
       try {
-        const { data: { user } } = await supabase.auth.getUser();
-        console.log("Auth check result:", { user });
+        // Get user session using the new client
+        const { data: { session }, error: sessionError } = await supabase.auth.getSession();
         
-        if (user) {
-          setUserId(user.id);
-          setDebugInfo((prev: DebugInfo) => ({ ...prev, userId: user.id }));
+        if (sessionError) {
+          console.error("Session error:", sessionError);
+          router.push('/login');
+          return;
         }
+        
+        if (!session?.user) {
+          console.error("No active session found");
+          router.push('/login');
+          return;
+        }
+
+        console.log("Auth check result:", { user: session.user });
+        setUserId(session.user.id);
+        setDebugInfo((prev: DebugInfo) => ({ ...prev, userId: session.user.id }));
+        
         await fetchQuestions();
       } catch (err) {
         console.error("Error initializing quiz:", err);
         setError("Failed to initialize quiz. Please try again.");
+        router.push('/login');
       } finally {
         setLoading(false);
       }
     };
 
     initQuiz();
-  }, []);
+  }, [router, supabase]);
 
   const fetchQuestions = async () => {
     try {
       const mood = localStorage.getItem("mood") || "neutral";
-      const stored = localStorage.getItem("selectedCategories");
+    const stored = localStorage.getItem("selectedCategories");
       const selectedIds = stored ? JSON.parse(stored) : [];
       
       console.log("Quiz initialization:", {
@@ -75,7 +91,7 @@ export default function QuizPage() {
         selectedCategories: selectedIds,
         initTime: new Date().toISOString()
       }));
-
+      
       // Map category IDs to actual category names
       const categoryMapping: { [key: string]: string } = {
         "mathe": "Mathe",
@@ -159,29 +175,32 @@ export default function QuizPage() {
 
   const handleAnswer = async (answer: string) => {
     if (!questions[current]) return;
-    const correct = questions[current].korrekte_antwort.trim() === answer.trim();
-    const mood = localStorage.getItem("mood") || "neutral";
     
-    console.log("Processing answer:", {
-      questionId: questions[current].id,
-      userAnswer: answer,
-      correctAnswer: questions[current].korrekte_antwort,
-      isCorrect: correct,
-      mood,
-      userId,
-      timestamp: new Date().toISOString()
-    });
-
-    if (correct) {
-      setScore((prev) => prev + 1);
-    }
-
-    if (!userId) {
-      console.error("No userId available for logging activity");
-      return;
-    }
-
     try {
+      // Check for userId immediately
+      if (!userId) {
+        console.error("No userId available for logging activity");
+        router.push('/login');
+        return;
+      }
+
+      const correct = questions[current].korrekte_antwort.trim() === answer.trim();
+      const mood = localStorage.getItem("mood") || "neutral";
+      
+      console.log("Processing answer:", {
+        questionId: questions[current].id,
+        userAnswer: answer,
+        correctAnswer: questions[current].korrekte_antwort,
+        isCorrect: correct,
+        mood,
+        userId,
+        timestamp: new Date().toISOString()
+      });
+
+      if (correct) {
+        setScore((prev) => prev + 1);
+      }
+
       const activityData = {
         user_id: userId,
         question_id: questions[current].id,
@@ -193,38 +212,84 @@ export default function QuizPage() {
 
       console.log("Attempting to insert activity:", activityData);
       
-      const { data, error: activityError } = await supabase
+      // First, verify the session is still valid
+      const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+      if (sessionError || !session) {
+        console.error("Session verification failed:", sessionError);
+        router.push('/login');
+        return;
+      }
+
+      // Try to insert with detailed error logging
+      const { error: activityError } = await supabase
         .from("user_activity")
-        .insert([activityData])
-        .select();
+        .insert([activityData]);
 
       if (activityError) {
-        console.error("Error logging answer:", activityError);
-        console.log("Full error details:", JSON.stringify(activityError, null, 2));
-        setError("Fehler beim Speichern der Antwort. Die Antworten werden möglicherweise nicht für den Bericht gespeichert.");
+        console.error("Error logging answer:", {
+          error: activityError,
+          code: activityError.code,
+          message: activityError.message,
+          details: activityError.details,
+          hint: activityError.hint
+        });
+        
+        // Check for specific error types
+        if (activityError.code === '42501') {
+          console.error("Permission denied. Please check Supabase policies for user_activity table.");
+          setError("Keine Berechtigung zum Speichern der Antwort. Bitte kontaktieren Sie den Administrator.");
+        } else if (activityError.code === '401' || activityError.message?.includes('auth')) {
+          router.push('/login');
+          return;
+        } else {
+          setError("Fehler beim Speichern der Antwort. Die Antworten werden möglicherweise nicht für den Bericht gespeichert.");
+        }
+        
         setDebugInfo((prev: DebugInfo) => ({
           ...prev,
-          lastError: activityError,
-          lastAttemptedActivity: activityData
+          lastError: {
+            code: activityError.code,
+            message: activityError.message,
+            details: activityError.details,
+            hint: activityError.hint
+          },
+          lastAttemptedActivity: activityData,
+          errorTime: new Date().toISOString()
         }));
-      } else {
-        console.log("Successfully logged activity:", data);
-        setDebugInfo((prev: DebugInfo) => ({
-          ...prev,
-          lastSuccessfulActivity: activityData
-        }));
+        return;
       }
-    } catch (err) {
-      console.error("Error logging answer:", err);
-      console.log("Full error:", err);
+
+      console.log("Successfully logged activity");
       setDebugInfo((prev: DebugInfo) => ({
         ...prev,
-        lastError: err,
+        lastSuccessfulActivity: activityData
+      }));
+      
+      // Only proceed to next question if activity was logged successfully
+      setCurrent((prev) => prev + 1);
+    } catch (err) {
+      console.error("Error logging answer:", {
+        error: err,
+        type: err instanceof Error ? err.constructor.name : typeof err,
+        message: err instanceof Error ? err.message : String(err)
+      });
+      
+      setDebugInfo((prev: DebugInfo) => ({
+        ...prev,
+        lastError: {
+          type: err instanceof Error ? err.constructor.name : typeof err,
+          message: err instanceof Error ? err.message : String(err)
+        },
         errorTime: new Date().toISOString()
       }));
+      
+      if (err instanceof Error && (err.message?.includes('auth') || err.message?.includes('unauthorized'))) {
+        router.push('/login');
+        return;
+      }
+      
+      setError("Ein Fehler ist aufgetreten. Bitte versuche es erneut.");
     }
-
-    setCurrent((prev) => prev + 1);
   };
 
   // Debug panel component
@@ -310,14 +375,14 @@ export default function QuizPage() {
     return (
       <div className={styles.container}>
         <div className={styles.card}>
-          <h2>Quiz fertig!</h2>
+        <h2>Quiz fertig!</h2>
           <p className={styles.score}>Dein Score: {score} / {questions.length}</p>
           <button 
             className={styles.button}
             onClick={() => window.location.href = "/memory-prompt"}
           >
-            Weiter
-          </button>
+          Weiter
+        </button>
         </div>
         <DebugPanel />
       </div>
@@ -334,20 +399,20 @@ export default function QuizPage() {
           <span className={styles.kategorie}>{q.kategorie}</span>
           <span className={styles.schwierigkeit}>Schwierigkeit: {q.schwierigkeitsgrad}</span>
         </div>
-        <h2>Frage {current + 1} von {questions.length}</h2>
+      <h2>Frage {current + 1} von {questions.length}</h2>
         <p className={styles.question}>{q.frage}</p>
         <div className={styles.options}>
-          {opts.length > 0 ? (
-            opts.map((opt) => (
-              <button
-                key={opt}
+      {opts.length > 0 ? (
+        opts.map((opt) => (
+          <button
+            key={opt}
                 className={styles.optionButton}
-                onClick={() => handleAnswer(opt)}
-              >
-                {opt}
-              </button>
-            ))
-          ) : (
+            onClick={() => handleAnswer(opt)}
+          >
+            {opt}
+          </button>
+        ))
+      ) : (
             <button 
               className={styles.optionButton}
               onClick={() => handleAnswer("UserInput")}

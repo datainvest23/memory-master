@@ -8,26 +8,42 @@ const UserDisplay = () => {
 
   useEffect(() => {
     const fetchUserProfile = async () => {
+      // First check localStorage
+      const storedName = localStorage.getItem('userFirstName');
+      if (storedName) {
+        setFirstName(storedName);
+        return;
+      }
+
       try {
-        // Get the current user
+        // If not in localStorage, fetch from Supabase
         const { data: { user } } = await supabase.auth.getUser();
         
         if (user) {
-          // Fetch the user's profile
+          console.log("Fetching profile for user:", user.id);
+          
           const { data, error } = await supabase
             .from('profiles')
             .select('first_name')
             .eq('user_id', user.id)
-            .single();
+            .maybeSingle();
 
           if (error) {
             console.error('Error fetching profile:', error);
+            console.log('Full error details:', JSON.stringify(error, null, 2));
             return;
           }
 
-          if (data?.first_name) {
+          if (data) {
+            console.log('Profile data fetched:', data);
             setFirstName(data.first_name);
+            // Store for future use
+            localStorage.setItem('userFirstName', data.first_name);
+          } else {
+            console.log('No profile found for user');
           }
+        } else {
+          console.log('No authenticated user found');
         }
       } catch (error) {
         console.error('Error:', error);
